@@ -1,22 +1,22 @@
-const jwt = require("jsonwebtoken")
-require("dotenv").config()
-const authentication = (req,res,next)=>{
-    let headers =  req.headers?.authorization;
-    
-    if (!headers) {
-        return res.status(401).json({ error: "Authorization header missing. Please login again." });
-    } else {
-        const user_token = req?.headers?.authorization?.split(" ")[1];
-        // console.log(user_token)
-        jwt.verify(user_token, process.env.JWT_SECRET, function (err, decoded) {
-            if (err !== null) {
-                return res.status(401).send({ error: "Invalid or expired token. Please login again." });
-            }
-            req.user = decoded;
-            
-            next();
-        });
-    }
-}
+const jwt = require("jsonwebtoken");
+require("dotenv").config();
 
-module.exports = {authentication}
+const authentication = (req, res, next) => {
+
+    const token = req.cookies?.token; 
+  
+    if (!token) {
+        return res.status(401).json({ error: "No token found in cookies. Please login again." });
+    }
+
+    jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
+        if (err) {
+            return res.status(401).json({ error: "Invalid or expired token. Please login again." });
+        }
+
+        req.user = decoded; 
+        next();
+    });
+};
+
+module.exports = { authentication };

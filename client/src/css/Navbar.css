@@ -1,0 +1,41 @@
+.navbar{
+    border: 2px solid transparent;
+    width: 70%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 0px 100px;
+    height: auto;
+    align-items: center ;
+    background-color: bisque;
+}
+.heading{
+     text-shadow: 
+    1px 1px 0 #333,
+    2px 2px 0 #333,
+    3px 3px 0 #333,
+    4px 4px 0 #222,
+    5px 5px 0 #222,
+    6px 6px 0 #111;
+  transform: perspective(500px) rotateX(10deg);
+  transform-style: preserve-3d;
+  font-weight: bold;
+  font-size: 3rem;
+  letter-spacing: 2px;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+.right {
+    display: flex;
+    gap: 10px;
+}
+
+.right button{
+    padding: 12px 25px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 13px;
+    font-size: 15px;
+}
