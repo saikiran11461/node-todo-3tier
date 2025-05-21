@@ -4,6 +4,7 @@ require("dotenv").config();
 const authentication = (req, res, next) => {
 
     const token = req.cookies?.token; 
+    console.log("token", token)
   
     if (!token) {
         return res.status(401).json({ error: "No token found in cookies. Please login again." });

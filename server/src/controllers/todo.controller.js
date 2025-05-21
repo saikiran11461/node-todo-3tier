@@ -24,10 +24,12 @@ const todoController = {
     },
     createTodo:async(req,res)=>{
         const payload = req.body;
+        console.log("body",req.body)
         if(!payload){
             return res.send({message:"body not set"})
         }
         try {
+            payload.user_id = req.user._id
             let todo = await todoModel.create(payload);
             return res.status(201).send({message:"todo created success", todo})
         } catch (error) {

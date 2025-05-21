@@ -71,6 +71,16 @@ const userController = {
       return res.status(500).send({ message: error });
     }
   },
+
+
+ logOut:async(req, res) => {
+  res.clearCookie("token", {
+    httpOnly: true,
+    sameSite: "strict",
+  });
+
+  return res.status(200).send({ message: "Logout successful" });
+}
 };
 
 module.exports = { userController };

@@ -1,0 +1,53 @@
+.edit-todo-container {
+    width: 350px;
+    margin: 40px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fafafa;
+    font-family: sans-serif;
+  }
+  
+  .edit-todo-container h2 {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .form-group input[type="text"] {
+    padding: 8px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+  }
+  
+  .switch-group {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .edit-todo-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #2d89ef;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .edit-todo-container button:hover {
+    background-color: #1b5fc4;
+  }
+  
